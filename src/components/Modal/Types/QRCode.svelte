@@ -4,14 +4,9 @@
 	export let data = {};
 
 	const image = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&charset-source=UTF-8&charset-target=UTF-8&ecc=L&color=000&bgcolor=f7f9fc&margin=8&qzone=0&format=png&data=' + data.encodedLink;
-
-	function select(element) {
-		element.select();
-		element.setSelectionRange(0, element.value.length);
-	}
 </script>
 
-<img class="h-full w-full" src={image} />
+<img class="h-full w-full" src={image} alt="QR code for the shared Sudoku link" />
 
 <div class="mt-3">
 	<button class="btn btn-small w-full" on:click={() => modal.show('share', data)}>
